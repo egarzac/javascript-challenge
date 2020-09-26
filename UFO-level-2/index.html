@@ -23,7 +23,7 @@
     </nav>
     <div class="hero text-center">
       <h1>UFO Sightings</h1>
-      <p>The Truth is Out There</p>
+      <p>The Truth is Out There</p>orm
     </div>
     <div class="container">
       <div class="row margin-top-50">
@@ -32,21 +32,34 @@
             <div class="panel panel-default">
               <div class="panel-heading">Filter Search</div>
               <div class="panel-body">
-                <form>
+                <form id="form">
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+                        <input class="form-control" id="datetime" name= type="text" placeholder="1/11/2011">
+                    </form>
+                <form id="form2">
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="city">Enter a City</label>
+                        <input class="form-control" id="city" name= type="text" placeholder="benton">
                       </li>
                     </ul>
                   </div>
-                  <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                  <button id="filter-btn" type="button" class="btn btn-default">Filter Date</button>
+                  <button id="filter-btn2" type="button" class="btn btn-default">Filter City</button>
                 </form>
               </div>
             </div>
           </aside>
         </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Search Results</h1>
+            <ul class="summary"></ul>
+          </div>
         <div class="col-md-10">
           <div id="table-area" class="">
             <table id="ufo-table" class="table table-striped">
