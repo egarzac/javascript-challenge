@@ -19,7 +19,6 @@ data.forEach((tableData) => {
     });
   });
 
-
   // Create event handlers
 button.on("click", runEnter);
 
@@ -27,7 +26,7 @@ button.on("click", runEnter);
 function runEnter() {
 
   // Prevent the page from refreshing
-  //d3.event.preventDefault();
+  d3.event.preventDefault();
 
   // Select the input element and get the raw HTML node
   var inputElement = d3.select("#datetime");
@@ -40,10 +39,11 @@ function runEnter() {
 
   console.log(filteredData);
 
+//Created section to show filtered results in html
 var list = d3.select(".summary");
 // remove any children from the list to
 list.html("");
-
+//Map result arrays to convert to lists
 var sDate = filteredData.map(function(result) {
   return result.datetime
   });
@@ -79,42 +79,10 @@ var sComments = filteredData.map(function(result) {
     });
 console.log(sComments);
 
+//Loop to create lists in summary section and add results in text
   for (var i = 0; i < filteredData.length; i++) {
-  // remove any children from the list to
 
     console.log(sDate[i],sCity[i],sState[i],sCountry[i],sShape[i],sDuration[i],sComments[i]);
     list.append("li").text(`Date: ${sDate[i]}, City: ${sCity[i]}, Country: ${sCountry[i]}, Shape: ${sShape[i]}, Duration: ${sDuration[i]}, Comments: Shape: ${sComments[i]}`);
   }
-
-//var index = filteredData.length
-
-//list.html("");
-
-//Object.entries(filteredData).forEach(([key, value]) => {
-//var cell = list.append("li");
-
-//  for
-//cell[i].text(`sDate: ${sDate[0]}`);
-
-
-  //  list.append(sDate);
-
-//console.log(sDate)
-    //results.text(value);
-//  });
 };
-
-
-
-
-
-
-
-  //data.forEach((filteredData) => {
-  //  var row = table.append("tr");
-  //  Object.entries(filteredData).forEach(([key, value]) => {
-  //    var cell = row.append("td");
-  //    cell.text(value);
-  //    });
-//    });
-//};
